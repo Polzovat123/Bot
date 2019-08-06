@@ -10,7 +10,9 @@ bot = telebot.TeleBot(API_TOKEN, skip_pending= True)
 def send_welcome(message):
 	im = message.chat.first_name
 	bot.send_message(chat_id = message.chat.id,
-					text='Приветсвую '+ im)
+					text=message.from_user.first_name)
+	bot.send_message(chat_id = message.chat.id,
+					text=message.from_user.id)
 
 
 
